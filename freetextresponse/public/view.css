@@ -1,0 +1,216 @@
+.freetextresponse .user_input .status {
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.freetextresponse .user_input.unanswered .status {
+  width: 14px;
+  height: 14px;
+}
+
+.freetextresponse .user_input.correct .status {
+  width: 25px;
+  height: 20px;
+}
+
+.freetextresponse .user_input.incorrect .status {
+  width: 20px;
+  height: 20px;
+}
+
+.freetextresponse .user_input .student_answer {
+  height: 150px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 2px solid #e4e4e4;
+  min-width: 160px;
+  width: 85%;
+}
+
+.freetextresponse .user_input.unanswered .student_answer {
+  border: 2px solid #e4e4e4;
+}
+
+.freetextresponse .user_input.correct .student_answer {
+  border: 2px solid #612871;
+}
+
+.freetextresponse .user_input.incorrect .student_answer {
+  border: 2px solid #b20610;
+}
+
+.freetextresponse .action {
+  margin-top: 20px;
+}
+
+.freetextresponse .action .save {
+  height: 40px;
+  vertical-align: middle;
+  font-weight: 600;
+  display:none;
+}
+
+.freetextresponse .action .check {
+  height: 40px;
+  vertical-align: middle;
+  border-color: #0075b4;
+  background: #0075b4;
+  color: #fcfcfc;
+  font-size: 16px;
+  text-shadow: none;
+  box-shadow: none;
+  border-width: 1px;
+  border-radius: 0.1875rem;
+  width: auto;
+  height: auto;
+  padding: 0.625rem 1.25rem;
+  font-weight: normal;
+  text-shadow: none;
+  text-transform: capitalize;
+}
+
+.freetextresponse .action .check:hover {
+  background-color: #065683;
+}
+
+.freetextresponse .action .used-attempts-feedback {
+  display: inline-block;
+  margin-top: 8px;
+  margin-left: 10px;
+  color: #666;
+  font-style: italic;
+}
+
+.freetextresponse .action .nodisplay{
+  display: none;
+}
+
+.freetextresponse .problem-progress {
+  display: none!important;
+  padding-left: 5px;
+  color: #666;
+  font-weight: 100;
+  font-size: 1em;
+}
+
+.freetextresponse .word-count-message {
+  display: inline-block;
+  padding-left: 5px;
+  color: #666;
+  font-weight: 100;
+  font-size: 1em;
+}
+
+.freetextresponse .hidden {
+  visibility: hidden;
+}
+
+.freetextresponse .problem-header {
+  display: inline-block;
+}
+
+.freetextresponse .capa_alert {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: 1px solid #ebe8bf;
+  border-radius: 3px;
+  background: #fffcdd;
+  font-size: 0.9em;
+}
+
+.freetextresponse .responses-box {
+  margin-top: 10px;
+  padding: 10px;
+  background: #fbfbfb;
+  border: 1px solid #ddd;
+}
+.freetextresponse .responses-box.hidden {
+  display: none;
+}
+
+.freetextresponse .responses-title {
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+.freetextresponse .hide-button {
+  padding: 0;
+  float: right;
+  box-shadow: none;
+  background: none;
+  border: none;
+  color: #069;
+  text-decoration: underline;
+  text-shadow: none;
+}
+.freetextresponse .hide-button .show {
+  display: none;
+}
+.freetextresponse .hide-button .hide {
+  display: inline;
+}
+
+.freetextresponse .response-list {
+  list-style: none;
+}
+
+.freetextresponse .other-student-responses {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px dashed #ddd;
+  color: #414141;
+  font-size: 0.8em;
+  text-align: left;
+  list-style-type: none;
+}
+
+.freetextresponse .no-response {
+  font-size: 0.8em;
+  text-align: left;
+  list-style-type: none;
+}
+
+.freetextresponse div:empty {
+  display: none;
+}
+
+.freetextresponse textarea {
+  resize: none;
+}
+
+.freetextresponse textarea.student_answer:disabled {
+  background: #f9f9f9;
+}
+
+.freetextresponse .charNum {
+  display: none;
+}
+
+.freetextresponse .capa_inputtype.textline{
+  text-align: center;
+}
+
+.freetextresponse .problem-progress {
+  display: none!important;
+}
+
+/* CSS Media Theme */
+
+.freetextresponse.Media textarea {
+  border-radius:20px!important;
+  padding:15px;
+  outline:none;
+}
+
+.freetextresponse.Media .unanswered textarea:focus{
+  border-color:rgb(240, 119, 70)!important;
+  box-shadow: 0 0 6px 0 rgba(0,117,180,0.4), inset 0 0 4px 0 rgba(0,0,0,0.15);
+}
+
+/* esconder donde se mostraba el ticket porq ya no es necesario */
+.freetextresponse .user_input span.status {
+  display: none;
+}

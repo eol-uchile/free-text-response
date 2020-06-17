@@ -1,0 +1,43 @@
+{
+    "valid_zero_count_attempts": {
+        "word_count_valid": true,
+        "count_attempts": 0,
+        "min_word_count": 1,
+        "max_word_count": 10000, 
+        "ignore_attempts": false, 
+        "result": "" 
+    },
+    "valid_one_count_attempts": {
+        "word_count_valid": true,
+        "count_attempts": 1,
+        "min_word_count": 1,
+        "max_word_count": 10000, 
+        "ignore_attempts": false, 
+        "result": "" 
+    },
+    "valid_ignore_count_attempts": {
+        "word_count_valid": true,
+        "count_attempts": 1,
+        "min_word_count": 1,
+        "max_word_count": 10000, 
+        "ignore_attempts": true, 
+        "result": "" 
+    },
+    "plural_max_word_count": {
+        "word_count_valid": false,
+        "count_attempts": 1,
+        "min_word_count": 1,
+        "max_word_count": 10000, 
+        "ignore_attempts": false, 
+        "result":  "Debes escribir al menos 1 caracteres." 
+    },
+    "single_max_word_count": {
+        "word_count_valid": false,
+        "count_attempts": 1,
+        "min_word_count": 1,
+        "max_word_count": 1, 
+        "ignore_attempts": false, 
+        "result": "Debes escribir al menos 1 caracteres." 
+    }
+}
+
