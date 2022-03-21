@@ -17,11 +17,13 @@ from xblock.fields import Integer
 from xblock.fields import List
 from xblock.fields import Scope
 from xblock.fields import String
+from xmodule.fields import Date
 from xblock.fragment import Fragment
 from xblock.validation import ValidationMessage
 from xblockutils.resources import ResourceLoader
 from xblockutils.studio_editable import StudioEditableXBlockMixin
 from .mixins import EnforceDueDates, MissingDataFetcherMixin
+import datetime
 
 
 MAX_RESPONSES = 3
@@ -221,6 +223,11 @@ class FreeTextResponse(
     student_answer = String(
         default='',
         scope=Scope.user_state,
+    )
+
+    last_submission_time = Date(
+        help= "Last submission time",
+        scope=Scope.user_state
     )
 
     has_score = True
@@ -552,8 +559,8 @@ class FreeTextResponse(
         result = ''
         if self.max_attempts > 0:
             result = ungettext(
-                'Has realizado {count_attempts} de {max_attempts} intento',
-                'Has realizado {count_attempts} de {max_attempts} intentos',
+                'Ha realizado {count_attempts} de {max_attempts} intento',
+                'Ha realizado {count_attempts} de {max_attempts} intentos',
                 self.max_attempts,
             ).format(
                 count_attempts=self.count_attempts,
@@ -566,7 +573,7 @@ class FreeTextResponse(
         Returns the css class for the submit button
         """
         result = ''
-        if self.max_attempts > 0 and self.count_attempts >= self.max_attempts:
+        if self.max_attempts is not None and self.max_attempts > 0 and self.count_attempts >= self.max_attempts:
             result = 'nodisplay'
         return result
 
@@ -633,6 +640,8 @@ class FreeTextResponse(
         sub_msg = self._get_submitted_message()
         if sub_msg_error:
             sub_msg = "Error: El estado de la pregunta fue modificado, por favor recargue el sitio"
+
+        self.last_submission_time = datetime.datetime.now(utc)
             
         result = {
             'status': 'success',
@@ -647,6 +656,7 @@ class FreeTextResponse(
             'other_responses': self.get_other_answers(),
             'display_other_responses': self.display_other_student_responses,
             'visibility_class': self._get_indicator_visibility_class(),
+            'last_submission_time': self.last_submission_time.isoformat()
         }
         return result
 
