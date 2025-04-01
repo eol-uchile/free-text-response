@@ -24,10 +24,31 @@ function FreeTextResponseView(runtime, element) {
     var cachedAnswerId = xblockId + '_cached_answer';
     var problemProgressId = xblockId + '_problem_progress';
     var usedAttemptsFeedbackId = xblockId + '_used_attempts_feedback';
+
+    // Add new variables for tracking submission state
+    var hasSubmission = textareaStudentAnswer.val().trim().length > 0 && 
+                       $element.find('.submission-received').text().trim().length > 0;
+    var lastSubmissionTime = $element.attr('data-last-submission-time');
+
+    // Initialize state based on existing submission
+    if (hasSubmission || lastSubmissionTime) {
+        textareaStudentAnswer.prop('disabled', true);
+        buttonSubmit.addClass('nodisplay');
+        buttonSave.addClass('nodisplay');
+        setClassForTextAreaParent($element.find('.word-count-wrapper').attr('class').split(' ')[0]);
+    }
+
     if ($xblocksContainer.data(cachedAnswerId) !== undefined) {
         textareaStudentAnswer.text($xblocksContainer.data(cachedAnswerId));
         problemProgress.text($xblocksContainer.data(problemProgressId));
         usedAttemptsFeedback.text($xblocksContainer.data(usedAttemptsFeedbackId));
+        
+        // Also check cached state for submission
+        if ($xblocksContainer.data(cachedAnswerId).trim().length > 0) {
+            textareaStudentAnswer.prop('disabled', true);
+            buttonSubmit.addClass('nodisplay');
+            buttonSave.addClass('nodisplay');
+        }
     }
 
     //Inicio el contador de chars
