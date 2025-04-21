@@ -24,6 +24,7 @@ from xblockutils.resources import ResourceLoader
 from xblockutils.studio_editable import StudioEditableXBlockMixin
 from .mixins import EnforceDueDates, MissingDataFetcherMixin
 import datetime
+from pytz import utc
 
 
 MAX_RESPONSES = 3

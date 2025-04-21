@@ -354,8 +354,8 @@ class FreetextResponseXblockTestCase(unittest.TestCase):
     @ddt.data(
         # max_attempts, count_attempts, result
         (0, 4, ''),
-        (1, 0, 'Has realizado 0 de 1 intento'),
-        (3, 2, 'Has realizado 2 de 3 intentos'),
+        (1, 0, 'Ha realizado 0 de 1 intento'),
+        (3, 2, 'Ha realizado 2 de 3 intentos'),
     )
     @ddt.unpack
     def test_used_attempts_feedback_normal(

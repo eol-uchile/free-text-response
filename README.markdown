@@ -1,4 +1,7 @@
 # Free-text Response XBlock
+
+![Coverage Status](/coverage-badge.svg)
+
 XBlock to capture a free-text response.
 
 This package provides an XBlock for use with the EdX Platform and makes
@@ -27,3 +30,14 @@ according to the parameters above.
   e.g. "freetextresponse"
 
 Now, when you create a component "Free-text Response" should appear in the Advanced Component List.
+
+## TESTS
+**Prepare tests:**
+
+- Install **act** following the instructions in [https://nektosact.com/installation/index.html](https://nektosact.com/installation/index.html)
+
+**Run tests:**
+- In a terminal at the root of the project
+    ```
+    act -W .github/workflows/pythonapp.yml
+    ```
