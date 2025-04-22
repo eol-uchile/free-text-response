@@ -10,6 +10,8 @@ cd /openedx/requirements/app
 mkdir test_root
 ln -s /openedx/staticfiles ./test_root/
 
-DJANGO_SETTINGS_MODULE=lms.envs.test EDXAPP_TEST_MONGO_HOST=mongodb pytest freetextresponse/tests.py
+DJANGO_SETTINGS_MODULE=lms.envs.test EDXAPP_TEST_MONGO_HOST=mongodb pytest
+
+rm -Rf test_root
 
 genbadge coverage
