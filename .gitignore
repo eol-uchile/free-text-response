@@ -6,6 +6,3 @@ node_modules/
 coverage.xml
 .tox/
 .DS_STORE
-
-# openedx test files
-setup.cfg
