@@ -10,6 +10,8 @@ on:
       - reopened
       - synchronize
     branches:
+      - 'koa'
+      - 'lilac'
       - 'master'
     paths-ignore:
       - '.github/workflows/**'
